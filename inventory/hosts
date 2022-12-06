@@ -1,0 +1,7 @@
+[elk]
+192.168.58.111
+
+[all:vars]
+ansible_connection=ssh
+ansible_user=vagrant
+ansible_password=vagrant

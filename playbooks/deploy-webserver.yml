@@ -1,0 +1,6 @@
+---
+- name: deploy webserver
+  hosts: webserver           # host có tên là webserver được định nghĩa trong inventory
+  become: yes
+  roles:
+  - ../roles/webserver     # gọi đến tasks trong roles là webserver

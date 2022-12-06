@@ -1,0 +1,17 @@
+---
+# this playbook will deploy java 8
+- name: java 8
+  hosts: elk      # 1 inventory host có tên ELK
+  become: yes
+  roles:
+    - ../roles/java   # gọi đến role java, role java chứa các câu lệnh cài java
+
+# add repo for elk
+
+- name: add repo ELK && install elastic
+  hosts: elk
+  become: yes
+  vars_files: ../vars/credentials.yml
+  roles:
+    - ../roles/add-elastic-repo
+    - ../roles/elasticSearch

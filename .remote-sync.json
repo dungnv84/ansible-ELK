@@ -1,0 +1,19 @@
+{
+  "logger": {
+    "title": "Remote Sync"
+  },
+  "uploadOnSave": true,
+  "useAtomicWrites": true,
+  "deleteLocal": false,
+  "hostname": "192.168.58.111",
+  "port": "22",
+  "target": "/home/vagrant/ansible-ELK",
+  "ignore": [
+    ".remote-sync.json",
+    ".git/**"
+  ],
+  "username": "vagrant",
+  "password": "vagrant",
+  "watch": [],
+  "transport": "scp"
+}

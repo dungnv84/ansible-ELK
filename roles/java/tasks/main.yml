@@ -1,0 +1,6 @@
+---
+- name: install java
+  apt:
+    name: openjdk-8-jdk    # tên gói
+    state: present
+    update_cache: yes

@@ -1,0 +1,7 @@
+---
+# this playbook will deploy java 8
+- name: java 8
+  hosts: webserver      # 1 inventory host có tên ELK
+  become: yes
+  roles:
+    - ../roles/java   # gọi đến role java, role java chứa các câu lệnh cài java

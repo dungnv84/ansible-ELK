@@ -1,0 +1,28 @@
+---
+#  Add elasticSearch PSK (key)
+
+- name: add elasticSearch public singin key   # cái này chỉ là tên
+  apt_key:
+    url: "{{ elastic_psk_url }}"      # biến này gọi ở defaults/main.yml
+    state: present
+
+# install transport module
+
+- name: install apt-transport-https
+  apt:
+    name: apt-transport-https
+    update_cache: yes
+
+# == apt install  apt-transport-https
+# add elasticSearch repo definitions
+
+- name: add elasticSearch repo
+  apt_repository:
+    repo: "{{ elastic_repo }}"
+    state: present
+    update_cache: yes
+# system update
+# khi add repo xog phải apt update lại
+- name: system update
+  apt:
+    update_cache: yes
